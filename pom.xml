@@ -12,7 +12,7 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <drools-version>7.5.0-SNAPSHOT</drools-version>
+    <org.kie.version>7.5.0.Final</org.kie.version>
     <slf4j-version>1.7.22</slf4j-version>
     <junit-version>4.12</junit-version>
   </properties>
@@ -20,18 +20,50 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId>org.drools</groupId>
-        <artifactId>drools-bom</artifactId>
-        <type>pom</type>
-        <version>${drools-version}</version>
-        <scope>import</scope>
+        <groupId>org.kie</groupId>
+        <artifactId>kie-api</artifactId>
+        <version>${org.kie.version}</version>
       </dependency>
       <dependency>
         <groupId>org.kie</groupId>
-        <artifactId>kie-dmn-bom</artifactId>
-        <type>pom</type>
-        <version>${drools-version}</version>
-        <scope>import</scope>
+        <artifactId>kie-dmn-api</artifactId>
+        <version>${org.kie.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.kie</groupId>
+        <artifactId>kie-dmn-backend</artifactId>
+        <version>${org.kie.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.kie</groupId>
+        <artifactId>kie-dmn-core</artifactId>
+        <version>${org.kie.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.kie</groupId>
+        <artifactId>kie-dmn-feel</artifactId>
+        <version>${org.kie.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.kie</groupId>
+        <artifactId>kie-dmn-model</artifactId>
+        <version>${org.kie.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.kie</groupId>
+        <artifactId>kie-internal</artifactId>
+        <version>${org.kie.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.drools</groupId>
+        <artifactId>drools-core</artifactId>
+        <version>${org.kie.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.drools</groupId>
+        <artifactId>drools-compiler</artifactId>
+        <version>${org.kie.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
@@ -46,6 +78,36 @@
       <dependency>
         <groupId>org.kie</groupId>
         <artifactId>kie-dmn-core</artifactId>
+        <scope>provided,test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.kie</groupId>
+        <artifactId>kie-api</artifactId>
+        <scope>provided,test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.kie</groupId>
+        <artifactId>kie-dmn-api</artifactId>
+        <scope>provided,test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.kie</groupId>
+        <artifactId>kie-dmn-backend</artifactId>
+        <scope>provided,test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.kie</groupId>
+        <artifactId>kie-dmn-core</artifactId>
+        <scope>provided,test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.kie</groupId>
+        <artifactId>kie-dmn-feel</artifactId>
+        <scope>provided,test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.kie</groupId>
+        <artifactId>kie-dmn-model</artifactId>
         <scope>provided,test</scope>
       </dependency>
 
@@ -76,7 +138,7 @@
       <plugin>
         <groupId>org.kie</groupId>
         <artifactId>kie-maven-plugin</artifactId>
-        <version>${drools-version}</version>
+        <version>${org.kie.version}</version>
         <extensions>true</extensions>
       </plugin>
     </plugins>
